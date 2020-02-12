@@ -34,7 +34,7 @@ def snippet_detail(request, pk):
 
     elif request.method == 'PATCH':
         data = JSONParser().parse(request)
-        serializer = SnippetSerializer(snippet, data=data)
+        serializer = SnippetSerializer(snippet, data=data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data)
