@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'snippets',
+    'members',
 ]
+
+AUTH_USER_MODEL = 'members.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
