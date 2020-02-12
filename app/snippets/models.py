@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 from pygments.lexers import get_all_lexers
@@ -10,6 +11,7 @@ STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
 
 class Snippets(models.Model):
     # DB index 설정(Field.dv_index)
+    # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default='')
     code = models.TextField()

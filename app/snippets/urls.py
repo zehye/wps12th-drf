@@ -34,7 +34,7 @@ urlpatterns_viewset = [
 ]
 
 urlpatterns = [
-    path('api_view/', include(urlpatterns_api_view)),
+    path('api-view/', include(urlpatterns_api_view)),
     path('viewset/', include(urlpatterns_viewset)),
     path('router/', include(router.urls)),
 ]
